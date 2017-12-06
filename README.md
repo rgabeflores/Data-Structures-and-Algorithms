@@ -1,3 +1,3 @@
 # ∙ Data Structures and Algorithms ∙
-#####	- Implementation of data structures and algorithms using various programming languages
-#####	- Method for learning new syntax
+#####	- Various implementation of data structures and algorithms
+#####	- An excercise for learning basic syntax of a new language
