@@ -13,4 +13,10 @@ public class Search {
 			else 	return true;
 		}
 	}
+	public static boolean linearSearch(int[] a, int key) {
+		for(int i = 0; i < a.length; i++) {
+			if(a[i] == key) return true;
+		}
+		return false;
+	}
 }
