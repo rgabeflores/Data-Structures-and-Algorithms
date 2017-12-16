@@ -1,16 +1,15 @@
 import random as r
 
-def insertion_sort(_list):
-    for i in range(0, len(_list) - 1):
-        for j in range(i + 1,len(_list)):
-	        if _list[i] <= _list[j]:
-	        	continue
-	        else:
-	        	_list[j] = _list[j] + _list[i]
-	        	_list[i] = _list[j] - _list[i]
-	        	_list[j] = _list[j] - _list[i]
+def insertion_sort(a):
+	for i in range(1,len(a)):
+		temp = a[i]
+		j = i
+		while j > 0 and temp < a[j - 1]: 
+			a[j] = a[j - 1]
+			j -= 1
+		a[j] = temp
 
-    return _list
+	return a
 
 def main():
 	n = int(input("Enter a positive integer: "))
