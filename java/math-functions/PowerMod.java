@@ -3,10 +3,19 @@ import java.util.Scanner;
 
 public class PowerMod {
 	public static void main(String[] args) {
-		int base = 524;
-		int exponent = 111555;
-		int modulus = 11;
-		System.out.printf("Result: %d\n", pmod(base,exponent,modulus));
+		int base, exponent, modulus;
+		Scanner sc = new Scanner(System.in);
+		try {
+			System.out.println("Enter the base: ");
+			base = sc.nextInt();
+			System.out.println("Enter the exponent: ");
+			exponent = sc.nextInt();
+			System.out.println("Enter the modulus: ");
+			modulus = sc.nextInt();
+			System.out.printf("Result: %d\n", pmod(base,exponent,modulus));
+		}catch(Exception e) {
+			System.out.println("Input was invalid or there was an error.");
+		}
 	}
 	/**
 	 * Calculates large modular expressions efficiently
