@@ -1,17 +1,15 @@
-
 def dec_to_bin(x):
 	binary = []
 
-	base = 2
 	half = int(x / 2)
 	i = 0
 
-	while base ** i <= half:
+	while 2 ** i <= half:
 		i += 1
 		
 	while i >= 0:
-		if(x - (base ** i)) >= 0:
-			x -= base ** i
+		if(x - (2 ** i)) >= 0:
+			x -= 2 ** i
 			binary.append(True)
 		else:
 			binary.append(False)
