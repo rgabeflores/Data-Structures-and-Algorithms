@@ -54,6 +54,7 @@
 	* Decimal/Binary Conversion
 	* Euclidean Algorithm (GCD)
 	* Check Prime Number
+	* Power Mod Calculator
 3. Searches
 	* Binary Search
 	* Linear Search
