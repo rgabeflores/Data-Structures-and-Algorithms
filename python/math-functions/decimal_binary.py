@@ -1,4 +1,7 @@
 def dec_to_bin(x):
+	'''
+		Takes an integer and constructs a boolean array for the binary representation of the integer
+	'''
 	binary = []
 
 	half = int(x / 2)
@@ -19,6 +22,9 @@ def dec_to_bin(x):
 	return binary
 
 def bin_to_dec(binary):
+	'''
+		Takes a boolean array as a binary representation and calculates the integer value
+	'''
 	dec = 0
 	e = len(binary) - 1
 	for i in range(0,len(binary)):

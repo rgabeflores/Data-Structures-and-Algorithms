@@ -1,6 +1,9 @@
 
-# Euclidean Algorithm to find the Greatest Common Divisor
 def gcd(a,b):
+	'''
+		Uses the Euclidean Algorithm to get the
+		greatest common divisor of two numbers.
+	'''
 	x = a
 	y = b
 	while y != 0:
