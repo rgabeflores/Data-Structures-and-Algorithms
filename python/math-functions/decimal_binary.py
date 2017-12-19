@@ -62,6 +62,17 @@ def print_bin(binary):
 			print("0", end="")
 	print("\n")
 
+def to_continue():
+	while True:
+		again = input("Would you like to convert again? (Y/N)\n")
+		if again.upper() == "Y":
+			return True
+		elif again.upper() == "N":
+			return False
+		else:
+			print("\n\n    Please enter a valid option.\n")
+			continue
+
 def main():
 
 	options = ["(1) Decimal -> Binary", "(2) Binary -> Decimal"]
@@ -71,30 +82,38 @@ def main():
 	for option in options:
 		ui_menu += option + "\n    "
 
-	while True:
+	cont = True
+
+	while cont:
 		try:
 			print(ui_menu)
 			choice = int(input("Enter a function to use:  "))
+			print("\n\n")
 			if choice == 1:
-				a = int(input("Enter an integer in decimal: "))
-				print("\nDecimal:", a, "\n")
+				a = int(input("    Enter an integer in decimal: "))
 				result = dec_to_bin(a)
+
+				print("\nDecimal:", a, "\n")
 				print("\nBinary: ", end="")
 				print_bin(result)
-				break
 			elif choice == 2:
-				a = input("Enter a binary string: ")
+				a = input("    Enter a binary string: ")
 				a_bin = parse_bin(a)
+				result = bin_to_dec(a_bin)
+
 				print("\n    Binary: ", end="")
 				print_bin(a_bin)
-				result = bin_to_dec(a_bin)
 				print("\n    Decimal:", result, "\n")
-				break
 			else:
 				raise ValueError("Number too large.")
+
 		except ValueError as e:
 			print("\n\n    Please enter a valid choice.\n")
 			continue
+
+		cont = to_continue()
+
+	print("\n\n")
 
 if __name__ == "__main__":
 	main()
