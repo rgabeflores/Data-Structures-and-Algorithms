@@ -1,6 +1,12 @@
+'''
+	@author Gabriel Flores
+	Implementations of binary to decimal and decimal to binary conversions.
+	Binary is represented as a boolean array.
+'''
+
 def dec_to_bin(x):
 	'''
-		Takes an integer and constructs a boolean array for the binary representation of the integer
+		Takes an integer and constructs a boolean array for the binary representation of the integer.
 	'''
 	binary = []
 
@@ -23,7 +29,7 @@ def dec_to_bin(x):
 
 def bin_to_dec(binary):
 	'''
-		Takes a boolean array as a binary representation and calculates the integer value
+		Takes a boolean array as a binary representation and calculates the integer value.
 	'''
 	dec = 0
 	e = len(binary) - 1
@@ -32,6 +38,21 @@ def bin_to_dec(binary):
 			dec += 2 ** e
 		e -= 1
 	return dec
+
+def parse_bin(binary_str):
+	'''
+		Parses a string of bits into a boolean array.
+	'''
+	binary = []
+	for i in range(0,len(binary_str)):
+		if binary_str[i] == "1":
+			binary.append(True)
+		elif binary_str[i] == "0":
+			binary.append(False)
+		else:
+			print("Invalid binary string. Characters should only be '1' or '0'.")
+			break
+	return binary
 
 def print_bin(binary):
 	for i in binary:
@@ -42,13 +63,38 @@ def print_bin(binary):
 	print("\n")
 
 def main():
-	a = int(input("Enter an integer in decimal: "))
-	print("\nDecimal:", a, "\n")
-	a_bin = dec_to_bin(a)
-	print("\nBinary:", a_bin, "\n")
-	a_bin_a = bin_to_dec(a_bin)
-	print("\nDecimal:", a_bin_a, "\n")
-	print_bin(a_bin)
+
+	options = ["(1) Decimal -> Binary", "(2) Binary -> Decimal"]
+
+	ui_menu = "\n    "
+
+	for option in options:
+		ui_menu += option + "\n    "
+
+	while True:
+		try:
+			print(ui_menu)
+			choice = int(input("Enter a function to use:  "))
+			if choice == 1:
+				a = int(input("Enter an integer in decimal: "))
+				print("\nDecimal:", a, "\n")
+				result = dec_to_bin(a)
+				print("\nBinary: ", end="")
+				print_bin(result)
+				break
+			elif choice == 2:
+				a = input("Enter a binary string: ")
+				a_bin = parse_bin(a)
+				print("\n    Binary: ", end="")
+				print_bin(a_bin)
+				result = bin_to_dec(a_bin)
+				print("\n    Decimal:", result, "\n")
+				break
+			else:
+				raise ValueError("Number too large.")
+		except ValueError as e:
+			print("\n\n    Please enter a valid choice.\n")
+			continue
 
 if __name__ == "__main__":
 	main()

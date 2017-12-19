@@ -1,3 +1,8 @@
+'''
+	@author Gabriel Flores
+	A modular expression calculator that implements modular exponentiation.
+'''
+
 def dec_to_bin(x):
 	'''
 		Takes an integer and constructs a boolean array for the binary representation of the integer
@@ -38,12 +43,16 @@ def pmod(b,e,m):
 	return x
 
 def main():
-	b = int(input("Enter b: "))
-	e = int(input("Enter e: "))
-	m = int(input("Enter m: "))
+
+	print("\n    Format:    \n")
+	print("    b^e mod m    \n")
+
+	b = int(input("------ Enter b: "))
+	e = int(input("------ Enter e: "))
+	m = int(input("------ Enter m: "))
 
 	result = pmod(b, e, m)
-	print("\n",result,"\n")
+	print("\n------ Result:",result,"\n")
 
 if __name__ == "__main__":
 	main()

@@ -1,3 +1,8 @@
+'''
+	@author Gabriel Flores
+	Checks the primality of an integer.
+'''
+
 def is_prime(x):
 	'''
 		Checks the primality of an integer
