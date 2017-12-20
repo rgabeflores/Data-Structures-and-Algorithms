@@ -15,6 +15,7 @@
 	* Binary Search
 	* Linear Search
 4. Sorts
+	* Insertion Sort
 	* Selection Sort
 5. Strings
 	* String Reversal
