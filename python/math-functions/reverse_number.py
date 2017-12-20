@@ -1,4 +1,7 @@
-
+'''
+	@author Gabriel Flores
+	Reverses the digits of an integer.
+'''
 
 def reverse_num(num):
 	'''
@@ -13,14 +16,38 @@ def reverse_num(num):
 
 	return final
 
+def to_continue():
+	while True:
+		again = input("    Would you like to try again? (Y/N) ")
+		if again.upper() == "Y":
+			return True
+		elif again.upper() == "N":
+			return False
+		else:
+			print("\n\n    Please enter a valid option.\n")
+			continue
+
 def main():
-	a = int(input("Enter an integer to reverse: "))
 
-	print("Original", a)
+	cont = True
 
-	a = reverse_num(a)
+	while cont:
+		try:
+			print("\n\n")
+			a = int(input("    Enter an integer to reverse: "))
+			_a = reverse_num(a)
+			# Output
+			print("\n    Original", a)
+			print("    Reversed", _a)
+			print("\n")
 
-	print("Reversed", a)
+		except ValueError as e:
+			print("\n\n    Please enter a valid choice.\n")
+			continue
+
+		cont = to_continue()
+
+	print("\n\n")
 
 if __name__ == "__main__":
 	main()
