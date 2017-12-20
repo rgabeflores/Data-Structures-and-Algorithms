@@ -42,17 +42,40 @@ def pmod(b,e,m):
 
 	return x
 
+def to_continue():
+	while True:
+		again = input("    Would you like to try again? (Y/N) ")
+		if again.upper() == "Y":
+			return True
+		elif again.upper() == "N":
+			return False
+		else:
+			print("\n\n    Please enter a valid option.\n")
+			continue
+
 def main():
 
-	print("\n    Format:    \n")
-	print("    b^e mod m    \n")
+	cont = True
 
-	b = int(input("------ Enter b: "))
-	e = int(input("------ Enter e: "))
-	m = int(input("------ Enter m: "))
+	while cont:
+		try:
+			print("\n\n")
+			print("\n        Format:    \n")
+			print("        b^e mod m    \n")
 
-	result = pmod(b, e, m)
-	print("\n------ Result:",result,"\n")
+			b = int(input("    Enter b: "))
+			e = int(input("    Enter e: "))
+			m = int(input("    Enter m: "))
+
+			result = pmod(b, e, m)
+			print("\n    Result:",result,"\n")
+		except ValueError as e:
+			print("\n\n    Please enter a valid choice.\n")
+			continue
+
+		cont = to_continue()
+
+	print("\n\n")
 
 if __name__ == "__main__":
 	main()
