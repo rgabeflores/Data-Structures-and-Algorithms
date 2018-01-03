@@ -64,7 +64,7 @@ def print_bin(binary):
 
 def to_continue():
 	while True:
-		again = input("Would you like to convert again? (Y/N)\n")
+		again = input("    Would you like to convert again? (Y/N) ")
 		if again.upper() == "Y":
 			return True
 		elif again.upper() == "N":
@@ -93,14 +93,16 @@ def main():
 				a = int(input("    Enter an integer in decimal: "))
 				result = dec_to_bin(a)
 
-				print("\nDecimal:", a, "\n")
-				print("\nBinary: ", end="")
+				# Output
+				print("\n    Decimal:", a, "\n")
+				print("\n    Binary: ", end="")
 				print_bin(result)
 			elif choice == 2:
 				a = input("    Enter a binary string: ")
 				a_bin = parse_bin(a)
 				result = bin_to_dec(a_bin)
 
+				# Output
 				print("\n    Binary: ", end="")
 				print_bin(a_bin)
 				print("\n    Decimal:", result, "\n")

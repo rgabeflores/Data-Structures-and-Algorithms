@@ -5,7 +5,7 @@
 
 def reverse_num(num):
 	'''
-		Takes an integer and returns the integer with reversed digits
+		Takes an integer and returns the integer with reversed digits.
 	'''
 	final = 0
 

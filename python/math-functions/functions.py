@@ -9,8 +9,9 @@ import decimal_binary
 import euclidean_algorithm
 import power_mod
 import reverse_number
+import statistics
 
-options = ["(1) Check Prime", "(2) Decimal/Binary Conversions", "(3) Greatest Common Divisor", "(4) Power Mod Calculation", "(5) Reverse Integer"]
+options = ["(1) Check Prime", "(2) Decimal/Binary Conversions", "(3) Greatest Common Divisor", "(4) Power Mod Calculation", "(5) Reverse Integer", "(6) Data Set Statistics"]
 
 def switch(x):
 	exec(str({
@@ -19,6 +20,7 @@ def switch(x):
 		3: euclidean_algorithm,
 		4: power_mod,
 		5: reverse_number
+		6: statistics
 	}[x].main()))
 
 def to_continue():

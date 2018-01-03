@@ -5,7 +5,7 @@
 
 def dec_to_bin(x):
 	'''
-		Takes an integer and constructs a boolean array for the binary representation of the integer
+		Takes an integer and constructs a boolean array for the binary representation of the integer.
 	'''
 	binary = []
 
@@ -28,7 +28,7 @@ def dec_to_bin(x):
 
 def pmod(b,e,m):
 	'''
-		Uses modular exponentiation to calculate modular expressions with large values
+		Uses modular exponentiation to calculate modular expressions with large values.
 	'''
 	e_bin = dec_to_bin(e)
 	
