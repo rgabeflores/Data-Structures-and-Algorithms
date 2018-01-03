@@ -15,47 +15,15 @@ def mean(a):
 
 	return total / len(a)
 
-def median(a, key=None):
+def median(a):
 	'''
 		Implements Divide & Conquer technique to find the middle element of an array.
 	'''
-	pivot = get_pivot(a)
-	left = list()
-	right = list()
-
-	if key is None:
-		key = int(len(a) / 2)
-
-	for x in a:
-		if x <= pivot:
-			left.append(x)
-		else:
-			right.append(x)
-
-	length = len(left)
-	if(length > key):
-		return median(left,key)
-	elif(length == key):
-		return pivot
+	a.sort()
+	if len(a) % 2 == 0:
+		return (a[int(len(a) / 2)] + a[int(len(a) / 2) - 1]) / 2
 	else:
-		return median(right, (key - (len(left))))
-
-def get_pivot(a):
-	'''
-		Gets the median of the first, middle, and last elements of an unsorted array.
-	'''
-	first = a[0]
-	last = a[len(a) - 1]
-	mid = a[int(len(a) / 2)]
-
-	if (first < mid and mid < last) or (last < mid and mid < first):
-		return mid
-	elif (mid < first and first < last) or (last < first and first < mid):
-		return first
-	elif (first < last and last < mid) or (mid < last and last < first):
-		return last
-	else:
-		return mid
+		return a[int(len(a) / 2)]
 
 def mode(a):
 	'''
@@ -105,21 +73,21 @@ def variance(a, average=None):
 
 def get_user_choice():
 
-	ui_menu = "\n    "
+	ui_menu = "\n\t"
 
 	for option in options:
-		ui_menu += option + "\n    "
+		ui_menu += option + "\n\t"
 
 	while True:
 		try:
 			print(ui_menu)
-			choice = int(input("    Enter a function to use:  "))
+			choice = int(input("\tEnter a function to use:  "))
 			if choice <= len(options) and choice > 0:
 				return choice
 			else:
 				raise ValueError("Number too large.")
 		except ValueError as e:
-			print("\n\n    Please enter a valid choice.\n")
+			print("\n\n\tPlease enter a valid choice.\n")
 			continue
 
 
@@ -131,50 +99,24 @@ def to_continue():
 		elif again.upper() == "N":
 			return False
 		else:
-			print("\n\n    Please enter a valid option.\n")
+			print("\n\n\tPlease enter a valid option.\n")
 			continue
 
 def randomTest():
 
-	n = int(input("    Enter the size of the list to test: "))
+	n = int(input("\tEnter the size of the list to test: "))
 	
 	values = [r.randint(0,100) for i in range(n)]
-	print("\n    Values:", values,"\n")
 
-
-	_mean = mean(values)
-	_median = median(values)
-	_mode = mode(values)
-	_variance = variance(values, average=_mean)
-	_std_dev = std_dev(values, average=_mean, variance=_variance)
-
-	print("    Mean:", _mean)
-	print("    Median:", _median)
-	print("    Mode:", _mode)
-	print("    Variance:", _variance)
-	print("    Standard Deviation:", _std_dev)
-
+	return values
 
 def userInputTest():
 
 	user_input = input("    Enter the values separated by commas or spaces: ")
 
 	values = [int(x.strip()) for x in re.split(' |, |\n', user_input)]
-	print("\n    Values:", values,"\n")
 
-
-	_mean = mean(values)
-	_median = median(values)
-	_mode = mode(values)
-	_variance = variance(values, average=_mean)
-	_std_dev = std_dev(values, average=_mean, variance=_variance)
-
-	print("    Mean:", _mean)
-	print("    Median:", _median)
-	print("    Mode:", _mode)
-	print("    Variance:", _variance)
-	print("    Standard Deviation:", _std_dev)
-
+	return values
 
 def main():
 
@@ -187,10 +129,29 @@ def main():
 		print("\n")
 		
 		if choice == 1:
-			randomTest()
+			values = randomTest()
 		elif choice == 2:
-			userInputTest()
+			values = userInputTest()
 
+		print("\n\tValues:", values,"\n")
+		values.sort()
+		print("\n\tValues Sorted: ", values)
+
+		_high = values[len(values) - 1]
+		_low = values[0]
+		_mean = mean(values)
+		_median = median(values)
+		_mode = mode(values)
+		_variance = variance(values, average=_mean)
+		_std_dev = std_dev(values, average=_mean, variance=_variance)
+
+		print("\tHigh", _high)
+		print("\tLow", _low)
+		print("\tMean:", _mean)
+		print("\tMedian:", _median)
+		print("\tMode:", _mode)
+		print("\tVariance:", _variance)
+		print("\tStandard Deviation:", _std_dev)
 		print("\n\n")
 
 		cont = to_continue()
