@@ -50,16 +50,16 @@ def mode(a):
 		return None
 
 
-def std_dev(a, average=None, variance=None):
+def std_dev(a, average=None, var=None):
 	'''
 		Finds the the standard deviation of elements in an array.
 	'''
 	if average is None:
 		average = mean(a)
-	if variance is None:
-		variance = variance(a, average)
+	if var is None:
+		var = variance(a, average)
 
-	return variance ** 0.5
+	return var ** 0.5
 
 def variance(a, average=None):
 	if average is None:
