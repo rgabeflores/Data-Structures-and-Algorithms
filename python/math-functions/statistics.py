@@ -1,7 +1,7 @@
 import random as r
 import re
 
-options = ["(1) Test Random Numbers", "(2) Input Values"]
+options = ["Test Random Numbers", "Input Values"]
 
 def mean(a):
 	'''
@@ -75,8 +75,8 @@ def get_user_choice(options):
 
 	ui_menu = "\n\t"
 
-	for option in options:
-		ui_menu += option + "\n\t"
+	for i in range(len(options)):
+		ui_menu += "(" + str(i + 1) + ")" + " " + str(options[i]) + "\n\t"
 
 	while True:
 		try:
