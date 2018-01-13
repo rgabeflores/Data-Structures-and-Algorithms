@@ -3,6 +3,9 @@
 	Implementations of binary to decimal and decimal to binary conversions.
 	Binary is represented as a boolean array.
 '''
+import ux
+
+OPTIONS = ["Decimal -> Binary", "Binary -> Decimal"]
 
 def dec_to_bin(x):
 	'''
@@ -62,60 +65,30 @@ def print_bin(binary):
 			print("0", end="")
 	print("\n")
 
-def to_continue():
-	while True:
-		again = input("    Would you like to convert again? (Y/N) ")
-		if again.upper() == "Y":
-			return True
-		elif again.upper() == "N":
-			return False
-		else:
-			print("\n\n    Please enter a valid option.\n")
-			continue
-
 def main():
 
-	options = ["(1) Decimal -> Binary", "(2) Binary -> Decimal"]
+	def main_loop():
+		choice = ux.get_user_choice(OPTIONS)
+		print("\n\n")
+		if choice == 1:
+			a = int(input("    Enter an integer in decimal: "))
+			result = dec_to_bin(a)
 
-	ui_menu = "\n    "
+			# Output
+			print("\n    Decimal:", a, "\n")
+			print("\n    Binary: ", end="")
+			print_bin(result)
+		elif choice == 2:
+			a = input("    Enter a binary string: ")
+			a_bin = parse_bin(a)
+			result = bin_to_dec(a_bin)
 
-	for option in options:
-		ui_menu += option + "\n    "
+			# Output
+			print("\n    Binary: ", end="")
+			print_bin(a_bin)
+			print("\n    Decimal:", result, "\n")
 
-	cont = True
-
-	while cont:
-		try:
-			print(ui_menu)
-			choice = int(input("Enter a function to use:  "))
-			print("\n\n")
-			if choice == 1:
-				a = int(input("    Enter an integer in decimal: "))
-				result = dec_to_bin(a)
-
-				# Output
-				print("\n    Decimal:", a, "\n")
-				print("\n    Binary: ", end="")
-				print_bin(result)
-			elif choice == 2:
-				a = input("    Enter a binary string: ")
-				a_bin = parse_bin(a)
-				result = bin_to_dec(a_bin)
-
-				# Output
-				print("\n    Binary: ", end="")
-				print_bin(a_bin)
-				print("\n    Decimal:", result, "\n")
-			else:
-				raise ValueError("Number too large.")
-
-		except ValueError as e:
-			print("\n\n    Please enter a valid choice.\n")
-			continue
-
-		cont = to_continue()
-
-	print("\n\n")
+	ux.to_continue(main_loop)
 
 if __name__ == "__main__":
 	main()

@@ -2,6 +2,7 @@
 	@author Gabriel Flores
 	Gets the greatest common divisor using the Euclidean Algorithm.
 '''
+import ux
 
 def gcd(a,b):
 	'''
@@ -16,22 +17,9 @@ def gcd(a,b):
 		y = r
 	return x
 
-def to_continue():
-	while True:
-		again = input("    Would you like to try again? (Y/N) ")
-		if again.upper() == "Y":
-			return True
-		elif again.upper() == "N":
-			return False
-		else:
-			print("\n\n    Please enter a valid option.\n")
-			continue
-
 def main():
 
-	cont = True
-
-	while cont:
+	def main_loop():
 		try:
 			print("\n\n")
 			a = int(input("    Enter the first number: "))
@@ -42,11 +30,8 @@ def main():
 			print("\nThe GCD of,", a, "&", b, "is:", x, "\n")
 		except ValueError as e:
 			print("\n\n    Please enter a valid choice.\n")
-			continue
 
-		cont = to_continue()
-
-	print("\n\n")
+	ux.to_continue(main_loop)
 
 if __name__ == "__main__":
 	main()

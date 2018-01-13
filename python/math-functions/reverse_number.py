@@ -2,6 +2,7 @@
 	@author Gabriel Flores
 	Reverses the digits of an integer.
 '''
+import ux
 
 def reverse_num(num):
 	'''
@@ -16,38 +17,22 @@ def reverse_num(num):
 
 	return final
 
-def to_continue():
-	while True:
-		again = input("    Would you like to try again? (Y/N) ")
-		if again.upper() == "Y":
-			return True
-		elif again.upper() == "N":
-			return False
-		else:
-			print("\n\n    Please enter a valid option.\n")
-			continue
-
 def main():
 
-	cont = True
-
-	while cont:
+	def main_loop():
 		try:
 			print("\n\n")
 			a = int(input("    Enter an integer to reverse: "))
 			_a = reverse_num(a)
 			# Output
-			print("\n    Original", a)
-			print("    Reversed", _a)
+			print("\n\tOriginal", a)
+			print("\tReversed", _a)
 			print("\n")
 
 		except ValueError as e:
 			print("\n\n    Please enter a valid choice.\n")
-			continue
 
-		cont = to_continue()
-
-	print("\n\n")
+	ux.to_continue(main_loop)
 
 if __name__ == "__main__":
 	main()
