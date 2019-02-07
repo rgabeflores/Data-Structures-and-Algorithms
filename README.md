@@ -1,9 +1,7 @@
 # ∙ Data Structures, Math Functions, and Algorithms ∙
-######	- A large collection of code modules
-######	- Various implementation of data structures and algorithms
-######	- Excercises for learning basic syntax of a new language
+This is a large collection of code modules containing different operations. These arious implementations of common data structures and algorithms are written in popular languages. These are great excercises for learning basic syntax of these popular languages while also practicing efficient programming concepts.
 
-#### Java
+## Java
 1. Data Structures
 	* Binary Search Tree
 2. Math Functions
@@ -21,7 +19,7 @@
 	* String Reversal
 	* ROT13 Shift
 
-#### Python
+## Python
 1. Data Structures
 	* Binary Search Tree
 	* Heaps
@@ -42,14 +40,7 @@
 	* String Reversal
 	* ROT13 Shift
 
-#### C++
-1. Data Structures
-2. Math Functions
-3. Searches
-4. Sorts
-5. Strings
-
-#### JavaScript
+## JavaScript
 1. Data Structures
 2. Math Functions
 	* Decimal/Binary Conversion
@@ -59,5 +50,12 @@
 3. Searches
 	* Binary Search
 	* Linear Search
+4. Sorts
+5. Strings
+
+## C++
+1. Data Structures
+2. Math Functions
+3. Searches
 4. Sorts
 5. Strings
