@@ -69,4 +69,4 @@ Below is a list of the data structures, math functions, and algorithms that are 
 ## Contributors
 * [Gabriel Flores](https://github.com/rgabeflores) - [LinkedIn](https://www.linkedin.com/in/rgabrielflores/)
 
-> Please contact me if you notice any bugs or issues. 
+> Please contact me if you notice any bugs, issues, or modules that need revision. 
