@@ -1,5 +1,5 @@
 # Data Structures, Math Functions, and Algorithms
-This is a large collection of code modules containing different operations. These arious implementations of common data structures and algorithms are written in popular languages. These are great excercises for learning basic syntax of these popular languages while also practicing efficient programming concepts.
+This is a large collection of code modules containing different operations and concepts. These various implementations of common data structures and algorithms are written in popular languages. These are great excercises for learning basic syntax of popular languages while also practicing programming complexity.
 
 > Many of these modules are based on assignments completed for a college/university level course and have been generalized for use by the public.
 
@@ -69,4 +69,4 @@ Below is a list of the data structures, math functions, and algorithms that are 
 ## Contributors
 * [Gabriel Flores](https://github.com/rgabeflores) - [LinkedIn](https://www.linkedin.com/in/rgabrielflores/)
 
-> Please contact me if you notice any bugs, issues, or revisions needed. 
+> Please contact me if you notice any bugs, issues, or revisions needed.
